@@ -25,6 +25,9 @@ public class TiendaMain {
         inventario.mostrarLista();
         System.out.println("-------------------------------------");
         inventario.eliminarProducto(cocaCola);
+        tarta.setNombre("Tarta de fresa");
+        tarta.setCantidad(24);
+        tarta.setPrecio(17);
         System.out.println("-------------------------------------");
         inventario.mostrarLista();
         System.out.println("-------------------------------------");

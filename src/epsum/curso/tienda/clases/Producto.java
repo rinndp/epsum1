@@ -22,14 +22,17 @@ public class Producto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+        System.out.println("Se ha modificado el nombre de un producto a: " + nombre);
     }
 
     public void setPrecio(double precio) {
         this.precio = precio;
+        System.out.println("Se ha modificado el precio de '" +nombre+ "' a: " + precio);
     }
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+        System.out.println("Se ha modificado la cantidad de '" +nombre+ "' a: " + cantidad);
     }
 
     public String getNombre() {

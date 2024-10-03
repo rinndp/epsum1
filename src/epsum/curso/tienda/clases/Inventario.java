@@ -34,6 +34,6 @@ public class Inventario {
         for (Producto producto : this.lista) {
             total += producto.getPrecio()*producto.getCantidad();
         }
-        System.out.println("El inventario total es: "+total+"€");
+        System.out.println("El precio del inventario total es: "+total+"€");
     }
 }
