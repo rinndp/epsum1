@@ -1,4 +1,4 @@
-package epsum.curso.tienda.clases;
+package epsum.curso.accd.tienda.clases;
 
 import java.util.ArrayList;
 

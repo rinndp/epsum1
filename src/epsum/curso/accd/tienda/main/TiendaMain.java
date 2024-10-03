@@ -1,7 +1,7 @@
-package epsum.curso.tienda.main;
+package epsum.curso.accd.tienda.main;
 
-import epsum.curso.tienda.clases.Inventario;
-import epsum.curso.tienda.clases.Producto;
+import epsum.curso.accd.tienda.clases.Inventario;
+import epsum.curso.accd.tienda.clases.Producto;
 
 import java.util.ArrayList;
 
