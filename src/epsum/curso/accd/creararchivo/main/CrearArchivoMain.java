@@ -27,12 +27,11 @@ public class CrearArchivoMain {
                 }
             }
 
+            bufferedReader.close();
+
             System.out.println("Numero de vocales " + contadorVocales);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
-
     }
 }
