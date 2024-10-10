@@ -43,6 +43,7 @@ public class ArrayAlumnos {
             throw new RuntimeException(e);
         }
 
+        System.out.println("Se ha leido el archivo de alumnos CORRECTAMENTE");
         this.arrayAlumnos = alumnos;
     }
 

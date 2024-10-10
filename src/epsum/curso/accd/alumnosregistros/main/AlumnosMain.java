@@ -9,7 +9,9 @@ public class AlumnosMain {
         File file = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\alumnosregistros\\informacionAlumnos.txt");
 
         ArrayAlumnos alumnos = new ArrayAlumnos();
+        System.out.println("----------------------------------------------");
         alumnos.setAlumnos(file);
+        System.out.println("----------------------------------------------");
         alumnos.mostrarListaAlumnos();
         System.out.println("----------------------------------------------");
         alumnos.mostrarNotaMasAlta();
