@@ -72,8 +72,14 @@ public class ArrayAlumnos {
         ArrayList<Double> notasEstudiantes = new ArrayList<>();
         for (Alumno alumno : this.arrayAlumnos) {
             notasEstudiantes.add(alumno.getNotaMedia());
+
         }
-        System.out.println("La nota media más alta es un: "+ Collections.max(notasEstudiantes));
+        for (Alumno alumno : this.arrayAlumnos) {
+            if (alumno.getNotaMedia() == Collections.max(notasEstudiantes)) {
+                System.out.println("EL ALUMNO CON MAS NOTA MEDIA ES:");
+                System.out.println(alumno.toString());
+            }
+        }
     }
 
     public void guardarAlumnosAprobados () {
