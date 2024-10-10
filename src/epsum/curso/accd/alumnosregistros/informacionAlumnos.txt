@@ -1,0 +1,4 @@
+Angela Veron,20,DAW,7.1223
+Silvia Climent,24,DAM,5.5
+Jordi Costa,22,DAW,9
+Axel Rojas,18,DAM,3
