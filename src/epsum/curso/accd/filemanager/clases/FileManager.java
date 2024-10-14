@@ -11,7 +11,6 @@ public class FileManager {
 
     public FileManager(String ruta) {
         this.ruta = ruta;
-        this.arrayFiguras = arrayFiguras;
     }
 
     public String getRuta() {
@@ -41,14 +40,10 @@ public class FileManager {
             String delimitador = " ";
 
             while ((linea = bufferedReader.readLine()) != null) {
-                String [] atributoFigura = new String [5];
+                String [] atributoFigura;
                 atributoFigura = linea.split(delimitador);
 
-                if (atributoFigura.length < 4) {
-                    System.err.println("FIGURA NO VALIDA");
-                }
-
-                if (atributoFigura[0].equals("rectangulo")) {
+                if (atributoFigura[0].equalsIgnoreCase("rectangulo")) {
                     Rectangulo rectangulo = new Rectangulo();
 
                     rectangulo.setBase(Double.parseDouble(atributoFigura[1]));
@@ -64,7 +59,7 @@ public class FileManager {
 
                     arrayFigurasAux.add(rectangulo);
 
-                } if (atributoFigura[0].equals("circulo")) {
+                } if (atributoFigura[0].equalsIgnoreCase("circulo")) {
                     Circulo circulo = new Circulo();
 
                     circulo.setRadio(Double.parseDouble(atributoFigura[1]));
@@ -77,7 +72,7 @@ public class FileManager {
 
                     arrayFigurasAux.add(circulo);
 
-                } if (atributoFigura[0].equals("cuadrado")) {
+                } if (atributoFigura[0].equalsIgnoreCase("cuadrado")) {
                     Cuadrado cuadrado = new Cuadrado();
 
                     cuadrado.setLado(Double.parseDouble(atributoFigura[1]));
@@ -140,6 +135,8 @@ public class FileManager {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        System.out.println("El contenido se ha guardado CORRECTAMENTE en el archivo externo");
     }
 
     public void showInformation () {
