@@ -1,0 +1,18 @@
+[RECTANGULO
+Base: 10.0
+Altura: 480.0
+Color: #cccee
+, RECTANGULO
+Base: 15.0
+Altura: 350.0
+Color: #fff0f0
+, CUADRADO
+Lado: 300.0
+Color: #000000
+, CÍRCULO
+Rádio: 250.0
+Color: #aaaaaa
+, CÍRCULO
+Rádio: 250.0
+Color: null
+]
