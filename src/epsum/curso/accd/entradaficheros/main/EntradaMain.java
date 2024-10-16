@@ -12,8 +12,8 @@ public class EntradaMain {
     }
 
     public static void readFileAndWriteFile () {
-        File readFile = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\filemanager\\entrada.txt");
-        File writeFile = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\filemanager\\salida.bin");
+        File readFile = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\entradaficheros\\entrada.txt");
+        File writeFile = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\entradaficheros\\salida.bin");
         FileOutputStream fos = null;
         FileInputStream fis = null;
 
@@ -25,15 +25,10 @@ public class EntradaMain {
                 byte[] content = new byte[(int) fileSize];
 
                 fis.read(content);
-                String contentString = new String(content);
-                byte [] contentByte = contentString.getBytes();
-                fos.write(contentByte);
-
+                fos.write(content);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
-
 }
