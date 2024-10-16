@@ -1,4 +1,4 @@
-package epsum.curso.accd.filemanager.main;
+package epsum.curso.accd.trabajandoficheros.main;
 
 import java.io.*;
 
