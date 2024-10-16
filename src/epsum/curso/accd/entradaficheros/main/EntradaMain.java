@@ -8,7 +8,6 @@ import java.io.IOException;
 public class EntradaMain {
     public static void main(String[] args) {
         readFileAndWriteFile();
-        System.out.println("------------------------------------------------------");
     }
 
     public static void readFileAndWriteFile () {
