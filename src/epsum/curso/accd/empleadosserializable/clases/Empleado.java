@@ -43,6 +43,6 @@ public class Empleado implements Serializable {
 
     @Override
     public String toString() {
-        return "DATOS EMPLEADO\nNombre: "+nombre+"\nEdad: "+edad+"\nSalario: "+salario+"\n";
+        return "DATOS EMPLEADO\nNombre: "+nombre+"\nEdad: "+edad+"\nSalario: "+salario+"€\n";
     }
 }
