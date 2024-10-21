@@ -1,8 +1,10 @@
 package epsum.curso.accd.zoologico.clases;
 
+import epsum.curso.accd.zoologico.interfaces.Gestionable;
+
 import java.io.Serializable;
 
-public abstract class Animal implements Serializable {
+public abstract class Animal implements Serializable, Gestionable {
     protected String nombre;
     protected int edad;
 

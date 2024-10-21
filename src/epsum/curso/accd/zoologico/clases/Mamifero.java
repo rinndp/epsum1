@@ -10,12 +10,18 @@ public class Mamifero extends Animal {
         this.tienePelo = tienePelo;
     }
 
+
     public Boolean getTienePelo() {
         return tienePelo;
     }
 
     public void setPelo(Boolean tienePelo) {
         this.tienePelo = tienePelo;
+    }
+
+    @Override
+    public String getTipo() {
+        return "MAMÍFERO";
     }
 
     @Override
@@ -26,6 +32,7 @@ public class Mamifero extends Animal {
         } else {
             tienePeloString = "NO";
         }
-        return "DATOS MAMÍFERO\nNombre: "+nombre+ "\nEdad: "+edad+"\n¿Tiene pelo?: "+tienePeloString+"\n";
+        return "DATOS "+getTipo()+"\nNombre: "+nombre+ "\nEdad: "+edad+"\n¿Tiene pelo?: "+tienePeloString+"\n";
     }
+
 }

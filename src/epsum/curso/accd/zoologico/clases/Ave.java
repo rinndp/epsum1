@@ -10,12 +10,17 @@ public class Ave extends Animal {
         this.puedeVolar = puedeVolar;
     }
 
-    public boolean isPuedeVolar() {
+    public boolean getPuedeVolar() {
         return puedeVolar;
     }
 
     public void setPuedeVolar(boolean puedeVolar) {
         this.puedeVolar = puedeVolar;
+    }
+
+    @Override
+    public String getTipo() {
+        return "AVE";
     }
 
     @Override
@@ -26,6 +31,6 @@ public class Ave extends Animal {
         } else {
             puedeVolarString = "NO";
         }
-        return "DATOS AVE\nNombre: "+nombre+ "\nEdad: "+edad+"\n¿Puede volar?: "+puedeVolarString+"\n";
+        return "DATOS "+getTipo()+"\nNombre: "+nombre+ "\nEdad: "+edad+"\n¿Puede volar?: "+puedeVolarString+"\n";
     }
 }

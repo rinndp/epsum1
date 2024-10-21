@@ -1,32 +1,34 @@
 package epsum.curso.accd.zoologico.clases;
 
+import epsum.curso.accd.zoologico.interfaces.Gestionable;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Zoologico {
-    ArrayList<Animal> animales = new ArrayList<>();
+    ArrayList<Gestionable> datosZoologico = new ArrayList<>();
 
     public Zoologico() {}
 
-    public Zoologico(ArrayList<Animal> animales) {
-        this.animales = animales;
+    public Zoologico(ArrayList<Gestionable> datosZoologico) {
+        this.datosZoologico = datosZoologico;
     }
 
-    public ArrayList<Animal> getAnimales() {
-        return animales;
+    public ArrayList<Gestionable> getDatosZoologico() {
+        return datosZoologico;
     }
 
-    public void setAnimales(ArrayList<Animal> animales) {
-        this.animales = animales;
+    public void setAnimales(ArrayList<Gestionable> datosZoologico) {
+        this.datosZoologico = datosZoologico;
     }
 
-    public void agregarAnimal() {
+    public void agregarInfo() {
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
 
         do {
-            System.out.println("¿Desea añadir un MAMÍFERO o AVE? (M/A)?");
+            System.out.println("¿Desea añadir un MAMÍFERO o AVE o CUIDADOR? (M/A/C)?");
             String respuestaTipo = sc.next();
 
             if (respuestaTipo.equalsIgnoreCase("M")) {
@@ -43,7 +45,7 @@ public class Zoologico {
                 } else if (respuestaPelo.equalsIgnoreCase("N")) {
                     mamifero.setPelo(false);
                 }
-                animales.add(mamifero);
+                datosZoologico.add(mamifero);
             } else if (respuestaTipo.equalsIgnoreCase("A")) {
                 Ave ave = new Ave();
                 System.out.println("Introduzca el NOMBRE:");
@@ -58,10 +60,18 @@ public class Zoologico {
                 } else if (respuestaVolar.equalsIgnoreCase("N")) {
                     ave.setPuedeVolar(false);
                 }
-                animales.add(ave);
+                datosZoologico.add(ave);
+            } else if (respuestaTipo.equalsIgnoreCase("C")) {
+                Cuidador cuidador = new Cuidador();
+                System.out.println("Introduzca el NOMBRE:");
+                cuidador.setNombre(sc.next());
+                System.out.println("Introduzca el AREA:");
+                cuidador.setArea(sc.next());
+
+                datosZoologico.add(cuidador);
             }
 
-            System.out.println("Desea añadir otro ANIMAL? (S/N)");
+            System.out.println("Desea añadir otro? (S/N)");
             String respuestaContinuar = sc.next();
 
             if (respuestaContinuar.equalsIgnoreCase("S")) {
@@ -72,12 +82,19 @@ public class Zoologico {
         } while (!salir);
     }
 
+    public void mostrarDatosZoo () {
+        for (Gestionable gestionable : datosZoologico) {
+            System.out.println(gestionable);
+        }
+    }
+
     public void serializar () {
         File archivo = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\zoologico\\zoologico.ser");
 
         try (FileOutputStream fileOutputStream = new FileOutputStream(archivo);
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
-            objectOutputStream.writeObject(animales);
+            objectOutputStream.writeObject(datosZoologico);
+            System.out.println("La lista de objetos se ha SERIALIZADO CORRECTAMENTE");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -88,11 +105,12 @@ public class Zoologico {
 
         try (FileInputStream fileInputStream = new FileInputStream(archivo);
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-            ArrayList <Animal> animales = new ArrayList<>();
-            animales = (ArrayList<Animal>) objectInputStream.readObject();
+            ArrayList <Gestionable> datosZoologico;
+            datosZoologico = (ArrayList<Gestionable>) objectInputStream.readObject();
+            System.out.println("La lista de objetos se ha DESERIALIZADO:\n");
 
-            for (Animal animal : animales) {
-                System.out.println(animal);
+            for (Gestionable gestionable : datosZoologico) {
+                System.out.println(gestionable);
             }
 
         } catch (IOException | ClassNotFoundException e) {
