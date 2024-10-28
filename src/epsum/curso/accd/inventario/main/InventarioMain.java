@@ -10,7 +10,7 @@ public class InventarioMain {
         boolean salir = false;
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("\nGESTOR DE INVENTARIO\n0 - Salir\n1 - Leer inventario archivo .txt\n2 - Agregar producto\n3 - Mostar información");
+            System.out.println("\nGESTOR DE INVENTARIO\n0 - Salir\n1 - Leer inventario archivo .ser\n2 - Agregar producto\n3 - Mostar información");
             String resp = scanner.nextLine();
             switch (resp) {
                 case "0":
@@ -28,6 +28,7 @@ public class InventarioMain {
 
                 case "3":
                     gestorInventario.mostrarProductos();
+                    break;
 
                 default:
                     System.err.println("OPCIÓN NO VÁLIDA");

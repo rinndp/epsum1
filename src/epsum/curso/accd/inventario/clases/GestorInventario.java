@@ -24,7 +24,7 @@ public class GestorInventario {
     }
 
     public void obtenerInformacionArchivo() {
-        File archivo = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\inventario\\datos_tienda.txt");
+        File archivo = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\inventario\\datos_tienda.ser");
         if (archivo.exists()) {
             try {
                 BufferedReader bufferedReader = new BufferedReader(new FileReader(archivo));
@@ -45,6 +45,8 @@ public class GestorInventario {
 
                 }
                     System.out.println("SE HA LEIDO LA INFORMACIÓN");
+                long sizeBits = archivo.length();
+                System.out.println("TAMAÑO EN BYTES: "+sizeBits);
                 bufferedReader.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -57,7 +59,7 @@ public class GestorInventario {
 
     public void agregarProducto() {
         Scanner scanner = new Scanner(System.in);
-        File archivo = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\inventario\\datos_tienda.txt");
+        File archivo = new File("C:\\Users\\ALUMNO\\IdeaProjects\\epsum-java\\src\\epsum\\curso\\accd\\inventario\\datos_tienda.ser");
         boolean salir = false;
         do {
             System.out.println("¿Desea añadir un producto? (S/N)");
